@@ -1,0 +1,54 @@
+<?xml version='1.0' standalone='yes'?>
+<!DOCTYPE PLUGIN [
+<!ENTITY name       "template">
+<!ENTITY launch     "Settings/Template">
+<!ENTITY author     "llalon">
+<!ENTITY version "20231029">
+<!ENTITY branch "main">
+<!ENTITY file       "&name;-&version;.txz">
+<!ENTITY github     "llalon/unraid-plugin-template">
+<!ENTITY repo       "https://github.com/&github;">
+<!ENTITY releaseURL "https://raw.githubusercontent.com/&github;/&branch;">
+<!ENTITY pluginURL  "&releaseURL;/archive/&file;">
+<!ENTITY pluginURL  "&releaseURL;/plugin/&name;.plg">
+<!ENTITY md5 "5e9d784be4cbe66d55052c9acc217ee5">
+]>
+
+<PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;" support="&repo;">
+
+<CHANGES>
+### 1970.01.01
+- Initial Release
+</CHANGES>
+
+<FILE Run="/bin/bash">
+<INLINE>
+rm -f $(ls /boot/config/plugins/&name;/&name;*.txz 2>/dev/null|grep -v '&version;')
+</INLINE>
+</FILE>
+
+<FILE Name="/boot/config/plugins/&name;/&file;" Run="upgradepkg --install-new">
+<URL>&releaseURL;/archive/&file;</URL>
+<MD5>&md5;</MD5>
+</FILE>
+
+<FILE Run="/bin/bash">
+<INLINE>
+echo ""
+echo "----------------------------------------------------"
+echo " &name; has been installed."
+echo " Version: &version;"
+echo "----------------------------------------------------"
+echo ""
+</INLINE>
+</FILE>
+
+<FILE Run="/bin/bash" Method="remove">
+<INLINE>
+removepkg &name;-&version;
+rm -r /usr/local/emhttp/plugins/&name;
+rm -r /boot/config/plugins/&name;
+</INLINE>
+</FILE>
+
+</PLUGIN>

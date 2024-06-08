@@ -1,0 +1,3 @@
+**Template**
+
+Unraid plugin template
