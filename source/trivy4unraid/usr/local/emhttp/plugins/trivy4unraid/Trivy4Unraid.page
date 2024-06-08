@@ -1,14 +1,14 @@
-Title="Template"
-Icon="refresh"
+Title="Trivy4Unraid"
+Icon="trivy4unraid.png"
 Type="xmenu"
 Menu="Utilities"
 ---
 
 <?php
 $docroot = $docroot ?: $_SERVER['DOCUMENT_ROOT'] ?: '/usr/local/emhttp';
-$pluginRoot = '/plugins/template';
+$pluginRoot = '/plugins/trivy4unraid';
 ?>
 
 <div>
-    <p>Hello, Template!</p>
+    <p>Hello, Trivy4Unraid!</p>
 </div>

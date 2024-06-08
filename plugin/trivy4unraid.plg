@@ -1,17 +1,17 @@
 <?xml version='1.0' standalone='yes'?>
 <!DOCTYPE PLUGIN [
-<!ENTITY name       "template">
-<!ENTITY launch     "Settings/Template">
+<!ENTITY name       "Trivy4Unraid">
+<!ENTITY launch     "Settings/Trivy4Unraid">
 <!ENTITY author     "llalon">
-<!ENTITY version "20231029">
+<!ENTITY version "test">
 <!ENTITY branch "main">
 <!ENTITY file       "&name;-&version;.txz">
-<!ENTITY github     "llalon/unraid-plugin-template">
+<!ENTITY github     "llalon/unraid-plugin-trivy">
 <!ENTITY repo       "https://github.com/&github;">
 <!ENTITY releaseURL "https://raw.githubusercontent.com/&github;/&branch;">
 <!ENTITY pluginURL  "&releaseURL;/archive/&file;">
 <!ENTITY pluginURL  "&releaseURL;/plugin/&name;.plg">
-<!ENTITY md5 "5e9d784be4cbe66d55052c9acc217ee5">
+<!ENTITY md5 "3946d23328827d77a2a63c26b9b68a3e">
 ]>
 
 <PLUGIN name="&name;" author="&author;" version="&version;" launch="&launch;" pluginURL="&pluginURL;" support="&repo;">
